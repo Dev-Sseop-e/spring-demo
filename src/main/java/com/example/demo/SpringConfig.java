@@ -12,7 +12,6 @@ import javax.sql.DataSource;
 
 @Configuration
 public class SpringConfig {
-
     private final DataSource dataSource;
 
     public SpringConfig(DataSource dataSource) {
@@ -27,7 +26,8 @@ public class SpringConfig {
     @Bean
     public MemberRepository memberRepository() {
         //return new MemoryMemberRepository();
-        return new JdbcMemberRepository(dataSource);
+        //return new JdbcMemberRepository(dataSource);
+        return new JdbcTemplateMemberRepository(dataSource);
     }
 
 }
