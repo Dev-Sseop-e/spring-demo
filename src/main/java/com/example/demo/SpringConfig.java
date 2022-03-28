@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import com.example.demo.aop.TimeTraceAop;
 import com.example.demo.repository.*;
 import com.example.demo.service.MemberService;
 import org.springframework.context.annotation.Bean;
@@ -21,6 +22,11 @@ public class SpringConfig {
     public MemberService memberService() {
         return new MemberService(memberRepository);
     }
+
+//    @Bean
+//    public TimeTraceAop timeTraceAop() {
+//        return new TimeTraceAop();
+//    }
 
 //    private final DataSource dataSource;
 //    private final EntityManager em;
